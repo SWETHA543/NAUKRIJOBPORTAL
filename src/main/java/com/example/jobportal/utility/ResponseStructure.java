@@ -1,5 +1,9 @@
 package com.example.jobportal.utility;
 
+import java.util.List;
+
+import com.example.jobportal.responsedto.ExperianceResponseDto;
+
 public class ResponseStructure<T>{
 
 	private int statusCode;
@@ -25,6 +29,10 @@ public class ResponseStructure<T>{
 	}
 	public void setData(T data) {
 		this.data = data;
+	}
+	public void setData(List<ExperianceResponseDto> responseList) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

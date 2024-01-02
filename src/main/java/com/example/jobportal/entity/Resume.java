@@ -8,6 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 
@@ -20,17 +21,44 @@ public class Resume {
 
 	private int resumeId;
 	private String objective;
+	private List<Experiance> workList;
 	
+	
+	public List<Experiance> getWorkList() {
+		return workList;
+	}
+	public void setWorkList(List<Experiance> workList) {
+		this.workList = workList;
+	}
 	@OneToOne
 	private User user;
-	@OneToMany(mappedBy = "resume")
+	@OneToMany(mappedBy = "associatedResume")
 	private List<Experiance> li;
 	
 	@OneToMany
 	private List<Skills> liskills;
 	
+	@OneToMany(mappedBy="associatedEducation")
+	private List<Education> eduList;
+	
+	@ManyToOne
+	private List<SocialProfile> socialport;
 	
 	
+	
+	
+	public List<SocialProfile> getSocialport() {
+		return socialport;
+	}
+	public void setSocialport(List<SocialProfile> socialport) {
+		this.socialport = socialport;
+	}
+	public List<Education> getEduList() {
+		return eduList;
+	}
+	public void setEduList(List<Education> eduList) {
+		this.eduList = eduList;
+	}
 	public List<Skills> getLiskills() {
 		return liskills;
 	}
