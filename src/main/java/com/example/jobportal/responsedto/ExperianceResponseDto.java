@@ -1,53 +1,95 @@
 package com.example.jobportal.responsedto;
 
 import java.time.LocalDate;
+import java.util.HashMap;
 
 import org.springframework.stereotype.Component;
 
 @Component
 public class ExperianceResponseDto {
+private int expId;
 	
-	private int experianceId;
-	private String companyName;
-	private boolean isPresent;
-	private LocalDate startingDate;
+	private String description;
+	private String organisation;
+	private String jobRole;
+	private Boolean jobStatus;
+	private LocalDate startDate;
 	private LocalDate endDate;
-	private String role;
-	public int getExperianceId() {
-		return experianceId;
+	private String yearsOfExperience;
+	
+	private HashMap<String,String> options;
+
+	public int getExpId() {
+		return expId;
 	}
-	public void setExperianceId(int experianceId) {
-		this.experianceId = experianceId;
+
+	public void setExpId(int expId) {
+		this.expId = expId;
 	}
-	public String getCompanyName() {
-		return companyName;
+
+	public String getDescription() {
+		return description;
 	}
-	public void setCompanyName(String companyName) {
-		this.companyName = companyName;
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
-	public boolean isPresent() {
-		return isPresent;
+
+	public String getOrganisation() {
+		return organisation;
 	}
-	public void setPresent(boolean isPresent) {
-		this.isPresent = isPresent;
+
+	public void setOrganisation(String organisation) {
+		this.organisation = organisation;
 	}
-	public LocalDate getStartingDate() {
-		return startingDate;
+
+	public String getJobRole() {
+		return jobRole;
 	}
-	public void setStartingDate(LocalDate startingDate) {
-		this.startingDate = startingDate;
+
+	public void setJobRole(String jobRole) {
+		this.jobRole = jobRole;
 	}
+
+	public Boolean getJobStatus() {
+		return jobStatus;
+	}
+
+	public void setJobStatus(Boolean jobStatus) {
+		this.jobStatus = jobStatus;
+	}
+
+	public LocalDate getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(LocalDate startDate) {
+		this.startDate = startDate;
+	}
+
 	public LocalDate getEndDate() {
 		return endDate;
 	}
+
 	public void setEndDate(LocalDate endDate) {
 		this.endDate = endDate;
 	}
-	public String getRole() {
-		return role;
-	}
-	public void setRole(String role) {
-		this.role = role;
+
+	public String getYearsOfExperience() {
+		return yearsOfExperience;
 	}
 
+	public void setYearsOfExperience(String yearsOfExperience) {
+		this.yearsOfExperience = yearsOfExperience;
+	}
+
+	public HashMap<String, String> getOptions() {
+		return options;
+	}
+
+	public void setOptions(HashMap<String, String> options) {
+		this.options = options;
+	}
+	
+	
 }

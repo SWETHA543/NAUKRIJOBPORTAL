@@ -5,6 +5,8 @@ import java.time.LocalDate;
 import org.springframework.stereotype.Component;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 
@@ -12,25 +14,29 @@ import jakarta.persistence.ManyToOne;
 @Entity
 public class Experiance {
 	
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
+	private int expId;
 	
-	private int experianceId;
-	private String companyName;
-	private boolean isPresent;
-	private LocalDate startingDate;
-	private LocalDate endDate;
-	private float yearOfExperiance;
-	public float getYearOfExperiance() {
-		return yearOfExperiance;
-	}
-
-	public void setYearOfExperiance(float yearOfExperiance) {
-		this.yearOfExperiance = yearOfExperiance;
-	}
-
-	private String role;
 	private String description;
+	private String organisation;
+	private String jobRole;
+	private Boolean jobStatus;
+	private LocalDate startDate;
+	private LocalDate endDate;
+	private String yearsOfExperience;
 	
+	@ManyToOne
+	private Resume associatedResume;
+
+	public int getExpId() {
+		return expId;
+	}
+
+	public void setExpId(int expId) {
+		this.expId = expId;
+	}
+
 	public String getDescription() {
 		return description;
 	}
@@ -39,39 +45,36 @@ public class Experiance {
 		this.description = description;
 	}
 
-	@ManyToOne
-	private Resume resume;
-
-	public int getExperianceId() {
-		return experianceId;
+	public String getOrganisation() {
+		return organisation;
 	}
 
-	public void setExperianceId(int experianceId) {
-		this.experianceId = experianceId;
+	public void setOrganisation(String organisation) {
+		this.organisation = organisation;
 	}
 
-	public String getCompanyName() {
-		return companyName;
+	public String getJobRole() {
+		return jobRole;
 	}
 
-	public void setCompanyName(String companyName) {
-		this.companyName = companyName;
+	public void setJobRole(String jobRole) {
+		this.jobRole = jobRole;
 	}
 
-	public boolean isPresent() {
-		return isPresent;
+	public Boolean getJobStatus() {
+		return jobStatus;
 	}
 
-	public void setPresent(boolean isPresent) {
-		this.isPresent = isPresent;
+	public void setJobStatus(Boolean jobStatus) {
+		this.jobStatus = jobStatus;
 	}
 
-	public LocalDate getStartingDate() {
-		return startingDate;
+	public LocalDate getStartDate() {
+		return startDate;
 	}
 
-	public void setStartingDate(LocalDate startingDate) {
-		this.startingDate = startingDate;
+	public void setStartDate(LocalDate startDate) {
+		this.startDate = startDate;
 	}
 
 	public LocalDate getEndDate() {
@@ -82,21 +85,22 @@ public class Experiance {
 		this.endDate = endDate;
 	}
 
-	public String getRole() {
-		return role;
+	public String getYearsOfExperience() {
+		return yearsOfExperience;
 	}
 
-	public void setRole(String role) {
-		this.role = role;
+	public void setYearsOfExperience(String yearsOfExperience) {
+		this.yearsOfExperience = yearsOfExperience;
 	}
 
-	public Resume getResume() {
-		return resume;
+	public Resume getAssociatedResume() {
+		return associatedResume;
 	}
 
-	public void setResume(Resume resume) {
-		this.resume = resume;
+	public void setAssociatedResume(Resume associatedResume) {
+		this.associatedResume = associatedResume;
 	}
 	
-
+	
+	
 }

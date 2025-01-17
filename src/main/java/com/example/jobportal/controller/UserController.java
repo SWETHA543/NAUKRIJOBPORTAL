@@ -25,7 +25,7 @@ public class UserController {
 	@Autowired
 	UserService userService;
 
-	@PostMapping("=")
+	@PostMapping("/user-roles/{role}/users")
 	public ResponseEntity<ResponseStructure<String>> inserUser(  @RequestBody   UserRequestDto userReq,
 			@PathVariable UserRole role) {
 
